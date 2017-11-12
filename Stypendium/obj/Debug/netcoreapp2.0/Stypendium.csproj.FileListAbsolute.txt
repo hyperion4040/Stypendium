@@ -1,0 +1,10 @@
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/bin/Debug/netcoreapp2.0/Stypendium.deps.json
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/bin/Debug/netcoreapp2.0/Stypendium.runtimeconfig.json
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/bin/Debug/netcoreapp2.0/Stypendium.runtimeconfig.dev.json
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/bin/Debug/netcoreapp2.0/Stypendium.dll
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/bin/Debug/netcoreapp2.0/Stypendium.pdb
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/obj/Debug/netcoreapp2.0/Stypendium.csproj.CoreCompileInputs.cache
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/obj/Debug/netcoreapp2.0/Stypendium.AssemblyInfoInputs.cache
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/obj/Debug/netcoreapp2.0/Stypendium.AssemblyInfo.cs
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/obj/Debug/netcoreapp2.0/Stypendium.dll
+/home/hyperion/Dokumenty/Projects/RiderProjects/Stypendium/Stypendium/obj/Debug/netcoreapp2.0/Stypendium.pdb
