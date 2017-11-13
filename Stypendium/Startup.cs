@@ -26,6 +26,7 @@ namespace Stypendium
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
+            services.AddDbContext<DataAccess>(opt => opt.UseSqlServer("Server=tcp:stypendium.database.windows.net,1433;Initial Catalog=stypendium;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddMvc();
         }
 
