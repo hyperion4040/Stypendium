@@ -5,9 +5,11 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Stypendium" t="IncludeRecursive">
         <e p="Controllers" t="Include">
+          <e p="PersonController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="DataAccess.cs" t="Include" />
           <e p="Person.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
         </e>
