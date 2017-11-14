@@ -26,8 +26,8 @@ namespace Stypendium
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
-           services.AddDbContext<DataAccess>(opt => opt.UseSqlServer(Configuration.GetSection("ConnectionStrings")["AzureConnection"]));
+            services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
+          // services.AddDbContext<DataAccess>(opt => opt.UseSqlServer(Configuration.GetSection("ConnectionStrings")["AzureConnection"]));
             services.AddMvc();
         }
 
@@ -52,7 +52,7 @@ namespace Stypendium
         
         private static void AddTestData(DataAccess context)
         {
-            /*var testUser1 = new Person()
+            var testUser1 = new Person()
             {
                 Id = 1,
                 Name = "Adrian"
@@ -66,7 +66,7 @@ namespace Stypendium
                 Name = "Sebastian"
             };
  
-            context.Persons.Add(testUser2);*/
+            context.Persons.Add(testUser2);
 
             var testUser3 = new Person()
             {
@@ -74,7 +74,7 @@ namespace Stypendium
                 Name = "Hadrianus"
             };
             context.Persons.Add(testUser3);
- 
+             
             context.SaveChanges();
         }
     }

@@ -1,7 +1,10 @@
-﻿namespace Stypendium.Models
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
+namespace Stypendium.Models
 {
     public class Person
     {
+        
         private int id;
         private string name;
 
@@ -12,7 +15,7 @@
             get => name;
             set => name = value;
         }
-
+        
         public int Id
         {
             get => id;

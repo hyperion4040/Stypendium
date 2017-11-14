@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +12,7 @@ namespace Stypendium.Controllers
     [Route("api/[controller]")]
     public class PersonController : Controller
     {
-        private readonly DataAccess _context;
+        private  DataAccess _context;
 
         public PersonController(DataAccess context)
         {
@@ -46,9 +45,44 @@ namespace Stypendium.Controllers
         }*/
 
     [HttpGet("{id}")]
-    public string Get(int id)
+    public async Task<IActionResult> Get(int id)
     {
-        return "";
-    } 
+        var persons = await _context.Persons
+            .ToArrayAsync();
+        
+        var response = persons.Where(u => u.Id == id);
+        
+        return Ok(response);
+    }
+
+        [HttpDelete("{id}")]
+        public  OkObjectResult Delete(int id)
+        {
+            Person person =  _context.Persons.Find(id);
+            _context.Persons.Remove(person);
+            _context.SaveChanges();
+
+            return Ok("Usunięto");
+        }
+        [HttpPost]
+        public OkObjectResult Post(Person person)
+        {
+            _context.Persons.Add(person);
+            _context.SaveChanges();
+
+            return Ok("Dodano");
+        }
+
+        [HttpPut]
+        public OkObjectResult Put(int id, Person person)
+        {
+            _context.Persons.Find(id).Name = person.Name;
+            
+            _context.SaveChanges();
+
+            return Ok("Zmieniono");
+        }
+        
+        
     }
 }
