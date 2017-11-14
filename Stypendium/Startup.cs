@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -25,8 +26,8 @@ namespace Stypendium
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
-            services.AddDbContext<DataAccess>(opt => opt.UseSqlServer("Server=tcp:stypendium.database.windows.net,1433;Initial Catalog=stypendium;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            //services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
+           services.AddDbContext<DataAccess>(opt => opt.UseSqlServer(Configuration.GetSection("ConnectionStrings")["AzureConnection"]));
             services.AddMvc();
         }
 
@@ -51,7 +52,7 @@ namespace Stypendium
         
         private static void AddTestData(DataAccess context)
         {
-            var testUser1 = new Person()
+            /*var testUser1 = new Person()
             {
                 Id = 1,
                 Name = "Adrian"
@@ -59,13 +60,20 @@ namespace Stypendium
  
             context.Persons.Add(testUser1);
  
-            var testPost1 = new Person()
+            var testUser2 = new Person()
             {
                Id = 2,
                 Name = "Sebastian"
             };
  
-            context.Persons.Add(testPost1);
+            context.Persons.Add(testUser2);*/
+
+            var testUser3 = new Person()
+            {
+                Id = 3,
+                Name = "Hadrianus"
+            };
+            context.Persons.Add(testUser3);
  
             context.SaveChanges();
         }

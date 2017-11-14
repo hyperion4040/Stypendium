@@ -15,5 +15,17 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="stypendium@stypendium.database.windows.net" uuid="33b4ae86-bdd6-48c1-937e-53aa967cb03b">
+      <driver-ref>azure.ms</driver-ref>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://stypendium.database.windows.net:1433;database=stypendium</jdbc-url>
+      <driver-properties>
+        <property name="loginTimeout" value="30" />
+        <property name="trustServerCertificate" value="false" />
+        <property name="encrypt" value="true" />
+        <property name="hostNameInCertificate" value="*.database.windows.net" />
+        <property name="applicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>
