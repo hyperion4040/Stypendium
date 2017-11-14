@@ -76,7 +76,11 @@ namespace Stypendium.Controllers
         [HttpPut]
         public OkObjectResult Put(int id, Person person)
         {
-            _context.Persons.Find(id).Name = person.Name;
+            Person oldPerson = _context.Persons.Find(id);
+            oldPerson.Name = person.Name;
+
+            _context.Persons.Update(oldPerson);
+            
             
             _context.SaveChanges();
 

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Stypendium.Models;
 
 namespace Stypendium
@@ -28,6 +23,7 @@ namespace Stypendium
         {
 //            services.AddDbContext<DataAccess>(opt => opt.UseInMemoryDatabase());
            services.AddDbContext<DataAccess>(opt => opt.UseSqlServer(Configuration.GetSection("ConnectionStrings")["AzureConnection"]));
+            
             services.AddMvc();
         }
 
@@ -52,30 +48,52 @@ namespace Stypendium
         
         private static void AddTestData(DataAccess context)
         {
-            var testUser1 = new Person()
-            {
-                Id = 1,
-                Name = "Adrian"
-            };
- 
-            context.Persons.Add(testUser1);
- 
-            var testUser2 = new Person()
-            {
-               Id = 2,
-                Name = "Sebastian"
-            };
- 
-            context.Persons.Add(testUser2);
+            
 
-            var testUser3 = new Person()
+
+            if (context.Database.EnsureCreated())
             {
-                Id = 3,
-                Name = "Hadrianus"
-            };
-            context.Persons.Add(testUser3);
+                
+                var testUser1 = new Person()
+                {
+                    //Id = 1,
+                    Name = "Adrian"
+                };
+ 
+                context.Persons.Add(testUser1);
+ 
+                var testUser2 = new Person()
+                {
+                    //Id = 2,
+                    Name = "Sebastian"
+                };
+ 
+                context.Persons.Add(testUser2);
+
+                var testUser3 = new Person()
+                {
+                    //Id = 3,
+                    Name = "Hadrianus"
+                };
+                context.Persons.Add(testUser3);
              
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            
+            
+            
+            /*context.Database.ExecuteSqlCommand(
+                "create table Persons(Id int," +
+                "Name varchar(30));"
+                );  */  
+                
+               
+            }
+           
+            
+            
+            
+            
+           
         }
     }
-}
