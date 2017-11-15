@@ -8,7 +8,6 @@ namespace Stypendium.Controllers
 {
     
     
-    
     [Route("api/[controller]")]
     public class PersonController : Controller
     {
@@ -61,7 +60,7 @@ namespace Stypendium.Controllers
             Person person =  _context.Persons.Find(id);
             _context.Persons.Remove(person);
             _context.SaveChanges();
-
+            
             return Ok("Usunięto");
         }
         [HttpPost]
