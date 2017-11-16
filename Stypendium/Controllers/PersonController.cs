@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -75,9 +78,10 @@ namespace Stypendium.Controllers
             return Ok("Dodano");
         }
 
-        [HttpPut]
-        public OkObjectResult Put( Person person)
+        [HttpPut/*("{id}/{name}")*/]
+        public OkObjectResult Put([FromBody]Person person)
         {
+            
             Person oldPerson = _context.Persons.Find(person.Id);
             oldPerson.Name = person.Name;
 
