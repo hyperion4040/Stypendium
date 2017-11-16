@@ -40,13 +40,7 @@ namespace Stypendium.Controllers
         
         
 
-        /*// GET
-        [HttpGet]
-        public  IEnumerable<string> Get()
-        {
-            var response = 
-
-        }*/
+       
 
     [HttpGet("{id}")]
     public async Task<JsonResult> Get(int id)
@@ -82,9 +76,9 @@ namespace Stypendium.Controllers
         }
 
         [HttpPut]
-        public OkObjectResult Put(int id, Person person)
+        public OkObjectResult Put( Person person)
         {
-            Person oldPerson = _context.Persons.Find(id);
+            Person oldPerson = _context.Persons.Find(person.Id);
             oldPerson.Name = person.Name;
 
             _context.Persons.Update(oldPerson);
