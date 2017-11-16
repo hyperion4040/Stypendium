@@ -12,6 +12,7 @@
         <e p="Models" t="Include">
           <e p="DataAccess.cs" t="Include" />
           <e p="Kierunek.cs" t="Include" />
+          <e p="MultiplePersons.cs" t="Include" />
           <e p="Person.cs" t="Include" />
           <e p="Przedmiot.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
