@@ -11,7 +11,7 @@ namespace Stypendium.Models
         
         public string Name { set; get; }
         
-      
+        
 
        
     }

@@ -47,17 +47,18 @@ namespace Stypendium.Controllers
        
 
     [HttpGet("{id}")]
-    public async Task<JsonResult> Get(int id)
+    public async Task<ActionResult> Get(int id)
     {
         var persons = await _context.Persons
             .ToArrayAsync();
         
         var response = persons.Where(u => u.Id == id);
-       
+        
         
         
 //        return Ok(response);
-        return Json(response);
+        //return Ok(response);
+        return new ObjectResult(response);
         
     }
 
@@ -71,16 +72,23 @@ namespace Stypendium.Controllers
             return Ok("Usunięto");
         }
         [HttpPost]
-        public OkObjectResult Post(Person person)
+        public ActionResult Post([FromBody]Person person)
         {
-            _context.Persons.Add(person);
+            _context.Persons.Add(
+                new Person
+                {
+                   // Id = person.Id,
+                    Name = person.Name
+                }
+                );
+            
             _context.SaveChanges();
 
             return Ok("Dodano");
         }
 
         [HttpPut/*("{id}/{name}")*/]
-        public OkObjectResult Put([FromBody]Person person)
+        public ActionResult Put([FromBody]Person person)
         {
             
             Person oldPerson = _context.Persons.Find(person.Id);
