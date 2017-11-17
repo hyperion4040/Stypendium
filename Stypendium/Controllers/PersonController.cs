@@ -23,21 +23,22 @@ namespace Stypendium.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<JsonResult> Get()
+        public async /*Task<JsonResult>*/ Task<ActionResult> Get()
         {
             var persons = await _context.Persons
                 .ToArrayAsync();
  
-            var response = persons.Select(u => new
+            var response = persons.Select(u => new Person
             { 
-                id = u.Id,
-                name = u.Name
-            }).ToList();
+                Id  = u.Id,
+                Name = u.Name
+            }).ToList<Person>();
             
             
             
 //            return Ok(new {persons = response});
-            return Json(new {persons = response});
+            //return Json(new {persons = response});
+            return Ok(response);
         }
 
         

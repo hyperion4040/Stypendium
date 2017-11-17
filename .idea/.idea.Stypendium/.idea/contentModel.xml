@@ -5,8 +5,10 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="Stypendium" t="IncludeRecursive">
         <e p="Controllers" t="Include">
+          <e p="KierunekController.cs" t="Include" />
           <e p="PersonController.cs" t="Include" />
           <e p="PrzedmiotController.cs" t="Include" />
+          <e p="StudentController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
@@ -20,6 +22,11 @@
         <e p="Program.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="Stypendium.csproj" t="IncludeRecursive" />
+        <e p="Views" t="Include">
+          <e p="Student" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+        </e>
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />

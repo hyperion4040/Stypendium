@@ -17,19 +17,35 @@ namespace Stypendium.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<JsonResult> Get()
         {
-            var przedmioty = await _context.Informatyka.ToArrayAsync();
+//            var przedmioty = await _context.Informatyka.ToArrayAsync();
             var przedmiot = await _context.Przedmioty.ToArrayAsync();
-            var response = przedmioty.Select(
+            var response = przedmiot.Select(
                 u => new
                 {
-                    id = u.Id,
-                    semestr = u.Semestr,
-                    przedmiot = u.Przedmiot.NazwaPrzedmiotu
+//                    id = u.Id,
+//                    semestr = u.Semestr,
+                    przedmiot = u.NazwaPrzedmiotu,
+                    ocena = u.Ocena
                 }
-            );
-            return Ok(response);
+            ).ToList();
+            return Json(new {przedmioty = response});
         }
+        [HttpPut/*("{NazwaPrzedmiotu}/{Ocena}")*/]
+        public  IActionResult Put([FromBody]Przedmiot przedmiot)
+        {
+            var staryPrzedmiot =  _context.Przedmioty.Find(przedmiot.NazwaPrzedmiotu);
+            staryPrzedmiot.Ocena = przedmiot.Ocena;
+            _context.Przedmioty.Update(staryPrzedmiot);
+            _context.SaveChanges();
+
+            return Ok("Aktualizacja oceny");
+
+        }
+        
+        
+        
+        
     }
 }

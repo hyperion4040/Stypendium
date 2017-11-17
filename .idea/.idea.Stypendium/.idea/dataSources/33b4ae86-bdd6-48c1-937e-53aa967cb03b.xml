@@ -14,7 +14,7 @@
     </database>
     <schema id="4" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2017-11-15.17:50:26.833</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-11-16.16:50:38.740</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -56,18 +56,18 @@
     </schema>
     <table id="17" parent="4" name="Informatyka">
       <ObjectId>1269579561</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.977</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:23.210</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.570</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.743</ModifiedTimestamp>
     </table>
     <table id="18" parent="4" name="Persons">
       <ObjectId>1205579333</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.490</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.490</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.220</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.220</ModifiedTimestamp>
     </table>
     <table id="19" parent="4" name="Przedmioty">
       <ObjectId>1237579447</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.743</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.980</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.393</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.570</ModifiedTimestamp>
     </table>
     <column id="20" parent="17" name="Id">
       <Position>1</Position>
@@ -96,16 +96,16 @@
     </index>
     <key id="25" parent="17" name="PK_Informatyka">
       <ObjectId>1285579618</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.980</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.980</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.570</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.570</ModifiedTimestamp>
       <ColNames>Id</ColNames>
       <UnderlyingIndexName>PK_Informatyka</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="26" parent="17" name="FK_Informatyka_Przedmioty_PrzedmiotNazwaPrzedmiotu">
       <ObjectId>1301579675</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.980</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.980</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.570</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.570</ModifiedTimestamp>
       <ColNames>PrzedmiotNazwaPrzedmiotu</ColNames>
       <RefTableId>1237579447</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
@@ -131,8 +131,8 @@
     </index>
     <key id="30" parent="18" name="PK_Persons">
       <ObjectId>1221579390</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.517</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.517</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.230</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.230</ModifiedTimestamp>
       <ColNames>Id</ColNames>
       <UnderlyingIndexName>PK_Persons</UnderlyingIndexName>
       <Primary>1</Primary>
@@ -155,8 +155,8 @@
     </index>
     <key id="34" parent="19" name="PK_Przedmioty">
       <ObjectId>1253579504</ObjectId>
-      <CreatedTimestamp>2017-11-15.17:49:22.743</CreatedTimestamp>
-      <ModifiedTimestamp>2017-11-15.17:49:22.743</ModifiedTimestamp>
+      <CreatedTimestamp>2017-11-16.16:49:32.393</CreatedTimestamp>
+      <ModifiedTimestamp>2017-11-16.16:49:32.393</ModifiedTimestamp>
       <ColNames>NazwaPrzedmiotu</ColNames>
       <UnderlyingIndexName>PK_Przedmioty</UnderlyingIndexName>
       <Primary>1</Primary>
